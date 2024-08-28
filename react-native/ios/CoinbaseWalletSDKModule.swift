@@ -9,10 +9,6 @@ public class CoinbaseWalletSDKModule: Module {
         Name("CoinbaseWalletSDK")
 
         Function("configure") { (params: ConfigParamsRecord) in
-            guard !CoinbaseWalletSDK.isConfigured else {
-                return
-            }
-
             let host: URL
             if let hostURLStr = params.hostURL {
                 host = URL(string: hostURLStr)!
