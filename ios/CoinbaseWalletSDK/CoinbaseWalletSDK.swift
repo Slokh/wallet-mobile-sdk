@@ -36,12 +36,7 @@ public final class CoinbaseWalletSDK {
     static public func configure(
         host: URL = URL(string: "https://wallet.coinbase.com/wsegue")!,
         callback: URL
-    ) {
-        guard isConfigured == false else {
-            assertionFailure("`CoinbaseWalletSDK.configure` should be called only once.")
-            return
-        }
-        
+    ) {        
         self.host = host
         if callback.pathComponents.count < 2 { // [] or ["/"]
             self.callback = callback.appendingPathComponent("wsegue")
